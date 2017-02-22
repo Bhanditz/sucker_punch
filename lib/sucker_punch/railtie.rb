@@ -4,4 +4,8 @@ module SuckerPunch
       SuckerPunch.logger = Rails.logger
     end
   end
+
+  config.to_prepare do
+    Celluloid::Actor.clear_registry
+  end
 end
